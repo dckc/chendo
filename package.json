@@ -1,4 +1,7 @@
 {
+  "name": "chendo",
+  "private": true,
+  "license": "Apache 2",
   "type": "module",
   "scripts": {
     "test": "ava"
