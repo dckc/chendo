@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<title>chendo</title>
+<body>
+<form>
+  <fieldset>
+    <textarea name="history" cols="80" rows="20"> </textarea>
+    <br />
+    <input name="msg" size="60"/> <input type="submit" name="send" value="Send" /></fieldset>
+  </fieldset>
+</form>
+<script type="module">
+    import {attach} from './chat.js';
+    attach({
+        querySelector: s => document.querySelector(s),
+        makeWebSocket: (...args) => new WebSocket(...args),
+    });
+</script>
+</body>
