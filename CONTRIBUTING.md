@@ -74,3 +74,19 @@ Done in 0.03s.
 ```
 alias endo='yarn --silent endo'
 ```
+
+## Our first endo plugin: tmpfs
+
+```
+~/projects/chendo
+12:36 connolly@bldbox$ endo reset
+~/projects/chendo
+12:36 connolly@bldbox$ endo spawn tmpfile
+~/projects/chendo
+12:36 connolly@bldbox$ endo import-unsafe0 tmpfile src/file-plugin.js -n tmpfs
+Object [Alleged: Files] {}
+12:37 connolly@bldbox$ date >/tmp/f1
+~/projects/chendo
+12:38 connolly@bldbox$ endo eval tmpfile 'E(tmpfs).readTmp("f1")' tmpfs
+Sat Mar 25 12:37:12 PM CDT 2023
+```
