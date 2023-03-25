@@ -13,6 +13,6 @@
     "timeout": "10m"
   },
   "dependencies": {
-    "@endo/cli": "../endo/packages/cli"
+    "@endo/cli": "^0.2.0"
   }
 }

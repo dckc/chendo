@@ -17,7 +17,3 @@ via a CapTP bridge.
 ref:
 
 - [Pet Daemon #1413](https://github.com/endojs/endo/pull/1413) notes Dec 2022
-
-git checkout kris-daemon-worker-endowments
-
-2022-12-27 20:55 c339e96ec feat(cli): Inbox, resolve, and reject commands
