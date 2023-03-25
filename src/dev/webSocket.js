@@ -1,6 +1,7 @@
 // @ts-check
+/* global assert */
 import { Far } from "@endo/far";
-import { assert } from "ses/src/error/assert.js";
+// import { assert } from "ses/src/error/assert.js";
 import { WebSocketServer } from "ws";
 
 /**
