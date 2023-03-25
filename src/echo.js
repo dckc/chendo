@@ -5,7 +5,7 @@ import { makePromiseKit } from "@endo/promise-kit";
 export const main0 = (powers) => {
   return Far("EchoService", {
     // TODO: type for wss
-    make(wss) {
+    async startOn(wss) {
       const { promise: senderP, resolve } = makePromiseKit();
       const onConnection = Far("onConnection", (sender) => {
         resolve(sender);
@@ -14,7 +14,8 @@ export const main0 = (powers) => {
           message: (msg) => E(senderP).send(msg),
         });
       });
-      E(wss).listen(onConnection);
+      await E(wss).listen(onConnection);
+      return true;
     },
   });
 };
