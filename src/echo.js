@@ -3,7 +3,7 @@ import { E, Far } from "@endo/far";
 
 export const main0 = (powers) => {
   return Far("EchoService", {
-    // TODO: type for wss
+    // TODO: static type for wss
     async startOn(wss) {
       const handler = Far("handler", {
         connect: (sender) => {
