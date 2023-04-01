@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <title>chendo</title>
+<style>
+/* easy-to-read background */
+  body {
+    background: #eee;
+  }
+
+  .center {
+    /* center the main element */
+    display: flex;
+    justify-content: center;
+  }
+
+  /* vertical space before footer */
+  footer {
+    margin-top: 5em;
+}
+</style>
+
 <body>
-<form>
-  <fieldset>
-    <textarea name="history" cols="80" rows="20"> </textarea>
-    <br />
-    <input name="msg" size="60"/> <input type="submit" name="send" value="Send" /></fieldset>
-  </fieldset>
-</form>
-<script type="module">
-    import {attach} from './chat.js';
+
+  <h1 class="center">Chendo - Endo Chat</h1>
+  <form class="center">
+    <fieldset>
+      <legend>Chat</legend>
+      <textarea name="history" cols="80" rows="20"> </textarea>
+      <br />
+      <input name="msg" size="60" /> <input type="submit" name="send" value="Send" />
+    </fieldset>
+    </fieldset>
+  </form>
+
+  <!-- signatute at the bottom of thepage -->
+  <footer>
+    <hr />
+    <address>
+      <a href="https://github.com/dckc/chendo">chendo source</a><br />
+      <a href="https://github.com/dckc">by dckc</a>
+    </address>
+  </footer>
+
+  <script type="module">
+    import { attach } from './chat.js';
     attach({
-        querySelector: s => document.querySelector(s),
-        makeWebSocket: (...args) => new WebSocket(...args),
+      querySelector: s => document.querySelector(s),
+      makeWebSocket: (...args) => new WebSocket(...args),
     });
-</script>
+  </script>
 </body>
