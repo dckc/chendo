@@ -4,6 +4,7 @@
   "license": "Apache 2",
   "type": "module",
   "scripts": {
+    "endo": "node ../endo/packages/cli/bin/endo",
     "test": "ava",
     "lint-fix": "yarn lint:eslint --fix",
     "lint": "run-s --continue-on-error lint:*",
@@ -34,7 +35,8 @@
     "timeout": "10m"
   },
   "dependencies": {
-    "@endo/cli": "^0.2.0",
+    "@endo/cli": "../endo/packages/cli",
+    "@endo/far": "^0.2.18",
     "@endo/promise-kit": "^0.2.54",
     "ws": "^8.13.0"
   }
