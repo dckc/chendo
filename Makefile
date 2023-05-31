@@ -8,8 +8,11 @@ start: $(PN)/echoSvc.json $(PN)/wss8.json
 $(PN)/wss8.json: $(PN)/socketDev.json
 	$(ENDO) eval -n wss8 socketWorker 'E(socketDev).makeServer(8080)' socketDev
 
-$(PN)/echoSvc.json: $(PN)/echoWorker.json
-	$(ENDO) import-unsafe0 echoWorker src/echo.js -n echoSvc
+$(PN)/echoSvc.json: $(PN)/echoWorker.json $(PN)/echoBundle.json
+	$(ENDO) import-bundle0 echoWorker echoBundle -n echoSvc
+
+$(PN)/echoBundle.json:
+	$(ENDO) bundle src/echo.js -n echoBundle
 
 $(PN)/echoWorker.json:
 	$(ENDO) spawn echoWorker
