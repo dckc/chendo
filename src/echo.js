@@ -1,6 +1,13 @@
 // @ts-check
 import { E, Far } from "@endo/far";
 
+if (!("console" in globalThis)) {
+  globalThis.console = {
+    log: (...args) => {},
+    error: () => {},
+  };
+}
+
 export const main0 = (powers) => {
   return Far("EchoService", {
     // TODO: static type for wss
