@@ -19,3 +19,6 @@ $(PN)/socketDev.json: $(PN)/socketWorker.json src/dev/webSocket.js
 
 $(PN)/socketWorker.json:
 	$(ENDO) spawn socketWorker
+
+clean:
+	$(ENDO) reset
