@@ -4,6 +4,7 @@
   "license": "Apache 2",
   "type": "module",
   "scripts": {
+    "endo": "node ../endo/packages/cli/bin/endo",
     "test": "ava",
     "lint-fix": "yarn lint:eslint --fix",
     "lint": "run-s --continue-on-error lint:*",
@@ -13,9 +14,11 @@
   "devDependencies": {
     "@endo/eslint-plugin": "^0.4.3",
     "@jessie.js/eslint-plugin": "^0.3.0",
+    "@types/ws": "^8.5.4",
     "ava": "^5.2.0",
     "eslint": "^8.36.0",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "xorshift": "^1.2.0"
   },
   "eslintConfig": {
     "extends": [
@@ -33,6 +36,9 @@
     "timeout": "10m"
   },
   "dependencies": {
-    "@endo/cli": "^0.2.0"
+    "@endo/cli": "../endo/packages/cli",
+    "@endo/far": "^0.2.18",
+    "@endo/promise-kit": "^0.2.54",
+    "ws": "^8.13.0"
   }
 }
